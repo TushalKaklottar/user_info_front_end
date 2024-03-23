@@ -11,7 +11,7 @@ class SignUp extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           height: size.height - 50,
           width: double.infinity,
           child: Column(
@@ -63,20 +63,21 @@ class SignUp extends StatelessWidget {
                   const SizedBox(height: 20),
                   TextField(
                     decoration: InputDecoration(
-                      hintText: "Password",
+                      hintText: "Contact no.",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(18),
                           borderSide: BorderSide.none),
                       fillColor: Colors.purple.withOpacity(0.1),
                       filled: true,
-                      prefixIcon: const Icon(Icons.password),
+                      prefixIcon:
+                          const Icon(Icons.quick_contacts_dialer_rounded),
                     ),
                     obscureText: true,
                   ),
                   const SizedBox(height: 20),
                   TextField(
                     decoration: InputDecoration(
-                      hintText: "Confirm Password",
+                      hintText: "Password",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(18),
                           borderSide: BorderSide.none),

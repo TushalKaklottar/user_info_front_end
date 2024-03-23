@@ -40,7 +40,7 @@ class SignIn extends StatelessWidget {
       children: [
         TextField(
           decoration: InputDecoration(
-              hintText: "Username",
+              hintText: "Username/Email id",
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
