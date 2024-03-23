@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:user_login_front_end/view/sign_in.dart';
 import 'package:user_login_front_end/view/sign_up.dart';
 import 'package:user_login_front_end/view/splash_screen.dart';
 
@@ -19,6 +20,10 @@ class MyRoutes {
     GetPage(
       name: _signUp,
       page: () => const SignUp(),
+    ),
+    GetPage(
+      name: _signIn,
+      page: () => const SignIn(),
     )
   ];
 }

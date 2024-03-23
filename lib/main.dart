@@ -13,10 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetCupertinoApp(
-      theme: const CupertinoThemeData(
-        scaffoldBackgroundColor: AppColor.teal2,
-      ),
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.splashRoutes(),
       getPages: MyRoutes.routes,
