@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:user_login_front_end/utils/color.dart';
+import 'package:user_login_front_end/utils/text_string.dart';
+import 'package:user_login_front_end/utils/text_theme.dart';
 import '../utils/size.dart';
 
 class SignUp extends StatelessWidget {
@@ -21,19 +24,16 @@ class SignUp extends StatelessWidget {
               Column(
                 children: [
                   const SizedBox(height: 60.0),
-                  const Text(
-                    "Sign up",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Text(
+                    StringManager.signUp,
+                    style: tTextStyleBold(28, AppColor.black),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 5,
                   ),
                   Text(
-                    "Create your account",
-                    style: TextStyle(fontSize: 15, color: Colors.grey[700]),
+                    StringManager.createAccount,
+                    style: tTextStyleMedium(12, AppColor.black),
                   ),
                 ],
               ),
@@ -41,47 +41,53 @@ class SignUp extends StatelessWidget {
                 children: [
                   TextField(
                     decoration: InputDecoration(
-                        hintText: "Username",
+                        hintText: StringManager.username,
+                        hintStyle: tTextStyleGrey(14),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(18),
                             borderSide: BorderSide.none),
-                        fillColor: Colors.purple.withOpacity(0.1),
+                        fillColor: AppColor.purple.withOpacity(0.1),
                         filled: true,
                         prefixIcon: const Icon(Icons.person)),
                   ),
                   const SizedBox(height: 20),
                   TextField(
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        hintText: "Email",
+                        hintText: StringManager.email,
+                        hintStyle: tTextStyleGrey(14),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(18),
                             borderSide: BorderSide.none),
-                        fillColor: Colors.purple.withOpacity(0.1),
+                        fillColor: AppColor.purple.withOpacity(0.1),
                         filled: true,
                         prefixIcon: const Icon(Icons.email)),
                   ),
                   const SizedBox(height: 20),
                   TextField(
+                    keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
-                      hintText: "Contact no.",
+                      hintText: StringManager.contact,
+                      hintStyle: tTextStyleGrey(14),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(18),
                           borderSide: BorderSide.none),
-                      fillColor: Colors.purple.withOpacity(0.1),
+                      fillColor: AppColor.purple.withOpacity(0.1),
                       filled: true,
                       prefixIcon:
                           const Icon(Icons.quick_contacts_dialer_rounded),
                     ),
-                    obscureText: true,
                   ),
                   const SizedBox(height: 20),
                   TextField(
+                    keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                      hintText: "Password",
+                      hintText: StringManager.password,
+                      hintStyle: tTextStyleGrey(14),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(18),
                           borderSide: BorderSide.none),
-                      fillColor: Colors.purple.withOpacity(0.1),
+                      fillColor: AppColor.purple.withOpacity(0.1),
                       filled: true,
                       prefixIcon: const Icon(Icons.password),
                     ),
@@ -96,27 +102,31 @@ class SignUp extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       shape: const StadiumBorder(),
                       padding: const EdgeInsets.symmetric(vertical: 16),
-                      backgroundColor: Colors.purple,
+                      backgroundColor: AppColor.purple,
                     ),
-                    child: const Text(
-                      "Sign up",
-                      style: TextStyle(fontSize: 20),
+                    child: Text(
+                      StringManager.signUp,
+                      style: tTextStyleBold(20, AppColor.white),
                     ),
                   )),
-              const Center(child: Text("Or")),
+              Center(
+                  child: Text(
+                StringManager.or,
+                style: tTextStyleBold(12, AppColor.black),
+              )),
               Container(
                 height: 45,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(
-                    color: Colors.purple,
+                    color: AppColor.purple,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.5),
+                      color: AppColor.white.withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 1,
-                      offset: const Offset(0, 1), // changes position of shadow
+                      offset: const Offset(0, 1),
                     ),
                   ],
                 ),
@@ -136,13 +146,8 @@ class SignUp extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 18),
-                      const Text(
-                        "Sign In with Google",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.purple,
-                        ),
-                      ),
+                      Text(StringManager.signInGoogle,
+                          style: tTextStyleBold(14, AppColor.purple)),
                     ],
                   ),
                 ),
@@ -150,15 +155,16 @@ class SignUp extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Already have an account?"),
+                  Text(
+                    StringManager.alreadyAccount,
+                    style: tTextStyleMedium(12, AppColor.black),
+                  ),
                   TextButton(
                     onPressed: () {
                       Get.toNamed("/SignIn");
                     },
-                    child: const Text(
-                      "SignIn",
-                      style: TextStyle(color: Colors.purple),
-                    ),
+                    child: Text(StringManager.signIn,
+                        style: tTextStyleMedium(13, AppColor.purple)),
                   )
                 ],
               )

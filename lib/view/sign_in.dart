@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:user_login_front_end/utils/color.dart';
+import 'package:user_login_front_end/utils/text_string.dart';
+import 'package:user_login_front_end/utils/text_theme.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -24,12 +27,15 @@ class SignIn extends StatelessWidget {
 
   _header(context) {
     return Column(
-      children: const [
+      children: [
         Text(
-          "Welcome Back",
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          StringManager.welcome,
+          style: tTextStyleBold(28, AppColor.black),
         ),
-        Text("Enter your credential to login"),
+        Text(
+          StringManager.credential,
+          style: tTextStyleMedium(12, AppColor.black),
+        ),
       ],
     );
   }
@@ -40,7 +46,8 @@ class SignIn extends StatelessWidget {
       children: [
         TextField(
           decoration: InputDecoration(
-              hintText: "Username/Email id",
+              hintText: StringManager.username,
+              hintStyle: tTextStyleGrey(14),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
@@ -51,7 +58,8 @@ class SignIn extends StatelessWidget {
         const SizedBox(height: 20),
         TextField(
           decoration: InputDecoration(
-            hintText: "Password",
+            hintText: StringManager.password,
+            hintStyle: tTextStyleGrey(14),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
@@ -69,9 +77,9 @@ class SignIn extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 16),
             backgroundColor: Colors.purple,
           ),
-          child: const Text(
-            "Login",
-            style: TextStyle(fontSize: 20),
+          child: Text(
+            StringManager.signIn,
+            style: tTextStyleBold(20, AppColor.white),
           ),
         )
       ],
@@ -81,10 +89,8 @@ class SignIn extends StatelessWidget {
   _forgotPassword(context) {
     return TextButton(
       onPressed: () {},
-      child: const Text(
-        "Forgot password?",
-        style: TextStyle(color: Colors.purple),
-      ),
+      child: Text(StringManager.forget,
+          style: tTextStyleMedium(13, AppColor.purple)),
     );
   }
 
@@ -92,15 +98,17 @@ class SignIn extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Don't have an account? "),
+        Text(
+          StringManager.haveAcc,
+          style: tTextStyleMedium(12, AppColor.black),
+        ),
         TextButton(
-            onPressed: () {
-              Get.toNamed("/SignUp");
-            },
-            child: const Text(
-              "Sign Up",
-              style: TextStyle(color: Colors.purple),
-            ))
+          onPressed: () {
+            Get.toNamed("/SignUp");
+          },
+          child: Text(StringManager.signUp,
+              style: tTextStyleMedium(13, AppColor.purple)),
+        )
       ],
     );
   }

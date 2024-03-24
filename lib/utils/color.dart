@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AppColor {
-  static Color teal = CupertinoColors.systemTeal;
-  static const Color teal2 = Color(0xffabf5f5);
+  static Color black = Colors.black;
+  static Color white = Colors.white;
+  static Color grey = Colors.grey.shade500;
+  static Color purple = Colors.purple;
 }
